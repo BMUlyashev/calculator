@@ -18,25 +18,25 @@ public class CalculatorController {
     }
 
     @GetMapping("/plus")
-    public String printSum(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2) {
-        return num1 + " + " + num2 + " = " + calculatorService.getSum(num1, num2);
+    public String printSum(@RequestParam(required = false) Integer num1,
+                           @RequestParam(required = false) Integer num2) {
+        return calculatorService.getSum(num1, num2);
     }
 
     @GetMapping("/minus")
-    public String printDiff(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2) {
-        return num1 + " - " + num2 + " = " + calculatorService.getDiff(num1, num2);
+    public String printDiff(@RequestParam(required = false) Integer num1,
+                            @RequestParam(required = false) Integer num2) {
+        return calculatorService.getDiff(num1, num2);
     }
 
     @GetMapping("/multiply")
-    public String printMultiply(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2) {
-        return num1 + " * " + num2 + " = " + calculatorService.getMultiply(num1, num2);
+    public String printMultiply(@RequestParam(required = false) Integer num1,
+                                @RequestParam(required = false) Integer num2) {
+        return calculatorService.getMultiply(num1, num2);
     }
     @GetMapping("/divide")
-    public String printDivide(@RequestParam("num1") Integer num1, @RequestParam("num2") Integer num2) {
-        if (num2 == 0) {
-            return "Ошибка! На 0 делить нельзя.";
-        } else {
-            return num1 + " / " + num2 + " = " + calculatorService.getDivide(num1, num2);
-        }
+    public String printDivide(@RequestParam(required = false) Integer num1,
+                              @RequestParam(required = false) Integer num2) {
+        return  calculatorService.getDivide(num1, num2);
     }
 }
