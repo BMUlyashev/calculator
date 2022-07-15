@@ -40,7 +40,7 @@ public class CalculatorServiceImpl implements CalculatorService {
         } else if (num2 == 0) {
             return "Ошибка! На 0 делить нельзя";
         } else {
-            return String.format("%d * %d = %f", num1, num2, (float)num1 / num2);
+            return String.format("%d / %d = %f", num1, num2, (float)num1 / num2);
         }
     }
 }
